@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5521/eureka/
+server:
+  port: 5530
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-attends-consumer
+    api-b:
+      path: /oa-moumou/**
+      serviceId: service-moumou
